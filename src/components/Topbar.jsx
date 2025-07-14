@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import logo from '@/assets/images/news.png'
 import { Button } from './ui/button'
 import { Link, useNavigate } from 'react-router-dom'
-import { MdLogin } from "react-icons/md";
-import SearchBox from './SearchBox';
-import { RouteBlogAdd, RouteIndex, RouteProfile, RouteSignIn } from '@/helpers/RouteName';
-import { useDispatch, useSelector } from 'react-redux';
+import { MdLogin } from "react-icons/md"
+import SearchBox from './SearchBox'
+import { RouteBlogAdd, RouteIndex, RouteProfile, RouteSignIn } from '@/helpers/RouteName'
+import { useDispatch, useSelector } from 'react-redux'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -17,24 +17,22 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import usericon from '@/assets/images/user.png'
 
-import { FaRegUser } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
-import { IoLogOutOutline, IoSearch } from "react-icons/io5";
-import { removeUser } from '@/redux/user/user.slice';
-import { showToast } from '@/helpers/showToast';
-import { getEvn } from '@/helpers/getEnv';
-import { IoMdSearch } from "react-icons/io";
-import { AiOutlineMenu } from "react-icons/ai";
-import { useSidebar } from './ui/sidebar';
-
+import { FaRegUser } from "react-icons/fa"
+import { FaPlus } from "react-icons/fa6"
+import { IoLogOutOutline, IoSearch } from "react-icons/io5"
+import { removeUser } from '@/redux/user/user.slice'
+import { showToast } from '@/helpers/showToast'
+import { getEvn } from '@/helpers/getEnv'
+import { IoMdSearch } from "react-icons/io"
+import { AiOutlineMenu } from "react-icons/ai"
+import { useSidebar } from './ui/sidebar'
 
 const Topbar = () => {
     const { toggleSidebar } = useSidebar()
     const [showSearch, setShowSearch] = useState(false)
-    const dispath = useDispatch()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector((state) => state.user)
-
 
     const handleLogout = async () => {
         try {
@@ -46,7 +44,7 @@ const Topbar = () => {
             if (!response.ok) {
                 return showToast('error', data.message)
             }
-            dispath(removeUser())
+            dispatch(removeUser())
             navigate(RouteIndex)
             showToast('success', data.message)
         } catch (error) {
@@ -66,7 +64,7 @@ const Topbar = () => {
                 </button>
                 <Link to={RouteIndex}>
                     {/* <img src={logo} className='md:w-28 w-48' /> */}
-                  <h1 className='text-xl font-bold'>South Mirror</h1>  
+                    <h1 className='text-xl font-bold'>South Mirror</h1>
                 </Link>
             </div>
             <div className='w-[500px]'>
@@ -80,20 +78,19 @@ const Topbar = () => {
                     <IoMdSearch size={25} />
                 </button>
 
-                {!user.isLoggedIn ?
+                {!user.isLoggedIn ? (
                     <Button asChild className="rounded-full">
-                        <Link to={RouteSignIn}  >
+                        <Link to={RouteSignIn}>
                             <MdLogin />
                             Sign In
                         </Link>
                     </Button>
-                    :
+                ) : (
                     <DropdownMenu>
                         <DropdownMenuTrigger>
                             <Avatar>
                                 <AvatarImage src={user.user.avatar || usericon} />
                             </Avatar>
-
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
                             <DropdownMenuLabel>
@@ -107,30 +104,27 @@ const Topbar = () => {
                                     Profile
                                 </Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem asChild className="cursor-pointer">
-                                <Link to={RouteBlogAdd}>
-                                    <FaPlus />
-                                    Create News
-                                </Link>
-                            </DropdownMenuItem>
+
+                            {/* ✅ Only show "Create News" if role is admin */}
+                            {user?.user?.role === 'admin' && (
+                                <DropdownMenuItem asChild className="cursor-pointer">
+                                    <Link to={RouteBlogAdd}>
+                                        <FaPlus />
+                                        Create News
+                                    </Link>
+                                </DropdownMenuItem>
+                            )}
 
                             <DropdownMenuSeparator />
-
                             <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
                                 <IoLogOutOutline color='red' />
                                 Logout
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
-
-                }
-
-
+                )}
             </div>
-
-
-
-        </div >
+        </div>
     )
 }
 
