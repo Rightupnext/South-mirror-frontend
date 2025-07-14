@@ -76,3 +76,66 @@ cp .env.example .env
 
 # Start the development server
 npm run dev
+🧪 Usage
+Visit http://localhost:5173 (or port configured)
+
+Browse and click any news card to open full view
+
+Login as Admin or Writer to access dashboard
+
+Add, update, or moderate news posts and comments
+
+🔐 Environment Variables
+Make sure to set up your .env file with values like:
+
+env
+Copy
+Edit
+VITE_API_BASE_URL=https://your-api-domain.com
+VITE_CLOUDINARY_UPLOAD_PRESET=your-upload-preset
+VITE_CLOUDINARY_CLOUD_NAME=your-cloud-name
+🧪 Testing
+Manual testing is done through all major browsers.
+Automated tests (optional) can be added via:
+
+React Testing Library
+
+Jest
+
+🚀 Deployment
+You can deploy this app to:
+
+Vercel: Auto-deploy from GitHub
+
+Netlify: Connect repo and set npm run dev as build command
+
+Custom domain: Point to your deployed host via CNAME
+
+🤝 Contributing
+Pull requests are welcome! For major changes, open an issue first.
+Please make sure to update tests as appropriate.
+
+📄 License
+This project is under MIT License — free to use and modify.
+
+👨‍💻 Developer Profile
+Name: Vishwa S
+
+Contact: +91-9944943241
+
+Frontend Repository: South Mirror Frontend
+
+Backend Repository: South Mirror Backend
+
+📅 Project Timeline
+Start Date: July 05, 2025
+
+Status: Ongoing
+
+Expected Completion: 20 Days
+
+Target Completion Date: July 25, 2025
+
+yaml
+Copy
+Edit
