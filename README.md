@@ -121,11 +121,11 @@ This project is under MIT License — free to use and modify.
 👨‍💻 Developer Profile
 Name: Vishwa S
 
-Contact: +91-9944943241
+Contact: 6385557221
 
-Frontend Repository: South Mirror Frontend
+Frontend Repository: South Mirror Frontend - https://github.com/Rightupnext/South-mirror-frontend
 
-Backend Repository: South Mirror Backend
+Backend Repository: South Mirror Backend - 
 
 📅 Project Timeline
 Start Date: July 05, 2025
