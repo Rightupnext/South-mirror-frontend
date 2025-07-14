@@ -37,13 +37,13 @@
 
 ## 🛠 Tech Stack
 
-| Layer        | Technologies |
-|--------------|--------------|
-| Frontend     | ReactJS, Tailwind CSS, Redux Toolkit, Ant Design |
-| Backend      | (Handled via separate API) |
-| API Communication | REST API (Axios or Fetch) |
-| Authentication | JWT / Role-based Auth (Backend) |
-| Deployment   | Vercel / Netlify / Custom Domain |
+| Layer            | Technologies                              |
+|------------------|--------------------------------------------|
+| Frontend         | ReactJS, Tailwind CSS, Redux Toolkit, Ant Design |
+| Backend          | (Handled via separate API)                 |
+| API Communication| REST API (Axios or Fetch)                 |
+| Authentication   | JWT / Role-based Auth (Backend)           |
+| Deployment       | Vercel / Netlify / Custom Domain          |
 
 ---
 
@@ -65,8 +65,8 @@ The South Mirror News frontend is a **Single Page Application (SPA)** built with
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/south-mirror-news-frontend.git
-cd south-mirror-news-frontend
+git clone https://github.com/Rightupnext/South-mirror-frontend.git
+cd South-mirror-frontend
 
 # Install dependencies
 npm install
@@ -77,7 +77,7 @@ cp .env.example .env
 # Start the development server
 npm run dev
 🧪 Usage
-Visit http://localhost:5173 (or port configured)
+Visit: http://localhost:5173 (or configured port)
 
 Browse and click any news card to open full view
 
@@ -86,7 +86,7 @@ Login as Admin or Writer to access dashboard
 Add, update, or moderate news posts and comments
 
 🔐 Environment Variables
-Make sure to set up your .env file with values like:
+Make sure to configure your .env file like:
 
 env
 Copy
@@ -95,8 +95,9 @@ VITE_API_BASE_URL=https://your-api-domain.com
 VITE_CLOUDINARY_UPLOAD_PRESET=your-upload-preset
 VITE_CLOUDINARY_CLOUD_NAME=your-cloud-name
 🧪 Testing
-Manual testing is done through all major browsers.
-Automated tests (optional) can be added via:
+Manual testing across Chrome, Firefox, Safari
+
+Optionally add automated tests using:
 
 React Testing Library
 
@@ -105,27 +106,28 @@ Jest
 🚀 Deployment
 You can deploy this app to:
 
-Vercel: Auto-deploy from GitHub
+Vercel — auto-deploy from GitHub
 
-Netlify: Connect repo and set npm run dev as build command
+Netlify — connect repo, use npm run dev
 
-Custom domain: Point to your deployed host via CNAME
+Custom domain — via DNS + CNAME setup
 
 🤝 Contributing
-Pull requests are welcome! For major changes, open an issue first.
-Please make sure to update tests as appropriate.
+Pull requests are welcome!
+For major changes, please open an issue first.
+Make sure to update/add tests where needed.
 
 📄 License
-This project is under MIT License — free to use and modify.
+This project is licensed under the MIT License — free to use and modify.
 
 👨‍💻 Developer Profile
 Name: Vishwa S
 
-Contact: 6385557221
+Contact: +91-6385557221
 
-Frontend Repository: South Mirror Frontend - https://github.com/Rightupnext/South-mirror-frontend
+Frontend Repository: South Mirror Frontend
 
-Backend Repository: South Mirror Backend - 
+Backend Repository: Coming Soon
 
 📅 Project Timeline
 Start Date: July 05, 2025
@@ -135,7 +137,3 @@ Status: Ongoing
 Expected Completion: 20 Days
 
 Target Completion Date: July 25, 2025
-
-yaml
-Copy
-Edit
